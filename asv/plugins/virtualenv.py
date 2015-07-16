@@ -126,7 +126,7 @@ class Virtualenv(environment.Environment):
                     args.append("{0}=={1}".format(key, val))
                 else:
                     args.append(key)
-            self.run_executable('pip', args)
+            self.run_executable('pip', args, timeout=360)
 
     def install(self, package):
         log.info("Installing into {0}".format(self.name))
